@@ -1,0 +1,17 @@
+{
+  "name": "@agorapp-dao/content-solana-rust-intro-to-solana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "test": "exit 0",
+    "ci-check": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@agorapp-dao/content-common": "workspace:^"
+  }
+}

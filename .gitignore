@@ -1,0 +1,52 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# testing
+coverage/
+
+# next.js
+.next/
+out/
+
+# production
+build/
+
+# misc
+.DS_Store
+*.txt
+storybook-static
+frontend/public/sitemap*.xml
+frontend/public/content
+frontend/public/content2
+dev-editor/public/content
+dev-editor/public/content2
+
+# environment variables
+.env.local
+.env.stage
+.env.prod
+.env.production
+.env
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+.vscode/
+
+# Sentry
+.sentryclirc
+
+# Sentry
+next.config.original.js
+
+# Sentry
+next.config.wizardcopy.js
+
+# TypeScript
+tsconfig.tsbuildinfo

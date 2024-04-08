@@ -1,0 +1,30 @@
+{
+  "name": "agorapp-solana",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "pnpm run -r clean && rm -rf node_modules",
+    "prepare": "husky install || echo 'Husky is not installed'",
+    "prettier:fix": "prettier --write",
+    "dev": "pnpm --filter dev-editor run dev"
+  },
+  "dependencies": {
+    "@swc/core": "^1.3.52",
+    "ts-node": "^10.7.0",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "**/*.{ts,js,jsx,json}": [
+      "npm run prettier:fix"
+    ]
+  }
+}

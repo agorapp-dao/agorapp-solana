@@ -1,0 +1,21 @@
+{
+  "chain": "solana",
+  "language": "rust",
+  "slug": "intro-to-solana",
+  "name": "Introduction to Solana",
+  "description": "Get hands-on experience with Solana, emerging decentralized platform for building web3 applications.",
+  "type": "course",
+  "plugin": "@agorapp-dao/editor-plugin-solana",
+  "config": {
+    "tests": true
+  },
+  "lessons": [
+    {
+      "name": "Your first program",
+      "slug": "01-introduction",
+      "content": "01-introduction/lesson.md",
+      "files": ["01-introduction/program.rs"],
+      "solution": "01-introduction/solution.md"
+    }
+  ]
+}
