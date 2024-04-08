@@ -1,0 +1,7 @@
+# exclude all the runners except this one
+/runners
+!/runners/docker-runner
+
+**/node_modules
+**/dist
+**/contracts/userland

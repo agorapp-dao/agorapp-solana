@@ -1,0 +1,35 @@
+{
+  "name": "@agorapp-dao/runner-common",
+  "version": "1.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "prettier": "npx prettier --config ../../.prettierrc 'src/**/*.ts' --write",
+    "test": "tsc --noEmit && mocha -r ts-node/register 'src/**/*.test.ts'",
+    "clean": "rm -rf dist && rm -rf node_modules",
+    "lint": "npx eslint --config ../../.eslintrc.json 'src/**/*.ts'",
+    "lint:fix": "npx eslint --config ../../.eslintrc.json 'src/**/*.ts' --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^10.0.0",
+    "chai": "^4.3.6",
+    "colorette": "^2.0.20",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "mocha": "^10.1.0",
+    "mock-require": "^3.0.3",
+    "sinon": "^15.0.1",
+    "ts-dedent": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/express": "^4.17.14",
+    "@types/lodash": "^4.14.194",
+    "@types/mocha": "^10.0.0",
+    "@types/mock-require": "^2.0.1",
+    "@types/sinon": "^10.0.13"
+  }
+}
