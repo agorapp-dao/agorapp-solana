@@ -12,10 +12,10 @@
   "lessons": [
     {
       "name": "Your first program",
-      "slug": "introduction",
-      "content": "introduction/lesson.md",
-      "files": ["introduction/lib.rs"],
-      "solution": "introduction/solution.md"
+      "slug": "01-introduction",
+      "content": "01-introduction/lesson.md",
+      "files": ["01-introduction/lib.rs"],
+      "solution": "01-introduction/solution.md"
     },
     {
       "name": "Sysvar",

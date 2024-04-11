@@ -17,7 +17,7 @@ FROM base AS runner
 COPY --from=builder /app/target/release/agorapp-solana /usr/local/bin/agorapp-solana
 
 # pre-heat by building a program
-COPY ./lessons-code/solana-introduction /tmp/dummy-program
+COPY lessons-code/solana-01-introduction /tmp/dummy-program
 RUN cd /tmp/dummy-program && /root/.cargo/bin/cargo build-bpf
 RUN cd /tmp/dummy-program && /root/.cargo/bin/cargo test-sbf
 RUN rsync -azi /tmp/dummy-program/target /tmp/session_0001/
