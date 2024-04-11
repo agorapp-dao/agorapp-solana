@@ -14,8 +14,36 @@
       "name": "Your first program",
       "slug": "01-introduction",
       "content": "01-introduction/lesson.md",
-      "files": ["01-introduction/program.rs"],
+      "files": ["01-introduction/lib.rs"],
       "solution": "01-introduction/solution.md"
+    },
+    {
+      "name": "Sysvar",
+      "slug": "sysvar",
+      "content": "sysvar/lesson.md",
+      "files": ["sysvar/lib.rs"],
+      "solution": "sysvar/solution.md"
+    },
+    {
+      "name": "Transfer lamports",
+      "slug": "transfer-lamports",
+      "content": "transfer-lamports/lesson.md",
+      "files": ["transfer-lamports/lib.rs"],
+      "solution": "transfer-lamports/solution.md"
+    },
+    {
+      "name": "Cross-program invocation",
+      "slug": "cpi",
+      "content": "cpi/lesson.md",
+      "files": ["cpi/lib.rs"],
+      "solution": "cpi/solution.md"
+    },
+    {
+      "name": "Transfer tokens",
+      "slug": "transfer-tokens",
+      "content": "transfer-tokens/lesson.md",
+      "files": ["transfer-tokens/lib.rs"],
+      "solution": "transfer-tokens/solution.md"
     }
   ]
 }
