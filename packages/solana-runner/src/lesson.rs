@@ -11,7 +11,14 @@ impl Course {
     pub fn from_dir(basedir: &Path, prefix: &str) -> anyhow::Result<Self> {
         let mut lessons_by_slug = std::collections::HashMap::new();
         tracing::debug!("Loading course code from directory {basedir:?}");
-        let basedir = basedir.canonicalize()?;
+        let basedir = match basedir.canonicalize() {
+            Ok(basedir) => basedir,
+            Err(e) => {
+                let cwd = std::env::current_dir()?;
+                tracing::error!("Current working directory: {:?} does not contain {:?}", cwd.display(), basedir.display());
+                return Err(e.into());
+            }
+        };
         for entry in std::fs::read_dir(&basedir)? {
             let entry = entry?;
             let path = entry.path();
