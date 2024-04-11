@@ -26,3 +26,9 @@ run:
 
 stop:
 	docker kill $(IMAGE)
+
+CURL=curl -v --fail --header "Content-Type: application/json" --header "Accept: application/json"
+test-solve:
+	time $(CURL) http://localhost:7005/v1/solve -d@tests/solve01.json
+test-solve-withslash:
+	time $(CURL) http://localhost:7005/v1/solve/ -d@tests/solve01.json

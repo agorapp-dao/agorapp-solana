@@ -38,6 +38,7 @@ async fn main() -> anyhow::Result<()> {
     let app = Router::new()
         // `POST /users` goes to `create_user`
         .route("/v1/solve", post(solve))
+        .route("/v1/solve/", post(solve))
         ;
 
     // run our app with hyper
