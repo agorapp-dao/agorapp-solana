@@ -51,6 +51,14 @@ async fn main() -> anyhow::Result<()> {
 }
 
 async fn solve(Json(test_request): Json<TTestRequest>) -> Json<TTestResponse> {
+    let start = std::time::Instant::now();
+    let response = solve_raw(Json(test_request)).await;
+    let elapsed = start.elapsed();
+    tracing::info!("Serving 'solve' took {:?} seconds", elapsed);
+    response
+}
+
+async fn solve_raw(Json(test_request): Json<TTestRequest>) -> Json<TTestResponse> {
     tracing::debug!("solve: {:?}", test_request);
     let session_id = "session_0001"; //TODO: get session_id from headers
     //TODO: add session locking
