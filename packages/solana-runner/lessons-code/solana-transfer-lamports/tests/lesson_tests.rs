@@ -1,3 +1,6 @@
+//! https://github.com/solana-labs/solana-program-library/blob/master/examples/rust/transfer-lamports/src/lib.rs
+//!
+//! TEST A program demonstrating the transfer of lamports
 use {
     solana_program::{
         instruction::{AccountMeta, Instruction},
@@ -5,7 +8,7 @@ use {
     },
     solana_program_test::*,
     solana_sdk::{account::Account, signature::Signer, transaction::Transaction},
-    solana_lesson_transfer_lamports::processor::process_instruction,
+    solana_lesson_transfer_lamports::process_instruction,
     std::str::FromStr,
 };
 

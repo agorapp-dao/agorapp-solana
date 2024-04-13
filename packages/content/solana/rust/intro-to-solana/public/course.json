@@ -18,18 +18,18 @@
       "solution": "01-introduction/solution.md"
     },
     {
-      "name": "Sysvar",
-      "slug": "sysvar",
-      "content": "sysvar/lesson.md",
-      "files": ["sysvar/lib.rs"],
-      "solution": "sysvar/solution.md"
-    },
-    {
       "name": "Transfer lamports",
       "slug": "transfer-lamports",
       "content": "transfer-lamports/lesson.md",
       "files": ["transfer-lamports/lib.rs"],
       "solution": "transfer-lamports/solution.md"
+    },
+    {
+      "name": "Sysvar",
+      "slug": "sysvar",
+      "content": "sysvar/lesson.md",
+      "files": ["sysvar/lib.rs"],
+      "solution": "sysvar/solution.md"
     },
     {
       "name": "Cross-program invocation",
