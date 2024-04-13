@@ -5,10 +5,11 @@ use {
     },
     solana_program_test::*,
     solana_sdk::{signature::Signer, transaction::Transaction},
-    solana_lesson_introduction::processor::process_instruction,
+    solana_lesson_introduction::process_instruction,
     std::str::FromStr,
 };
 
+/// This test does not really look into the log messages; it just checks that the program completes without an error.
 #[tokio::test]
 async fn test_logging() {
     let program_id = Pubkey::from_str("Logging111111111111111111111111111111111111").unwrap();
