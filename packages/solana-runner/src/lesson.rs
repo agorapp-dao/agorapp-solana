@@ -44,7 +44,7 @@ impl Course {
 
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub struct Lesson {
     pub slug: String,
     pub dir: PathBuf,
