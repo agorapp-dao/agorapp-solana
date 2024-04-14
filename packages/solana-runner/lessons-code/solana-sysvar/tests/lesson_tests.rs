@@ -1,18 +1,18 @@
+//! https://github.com/solana-labs/solana-program-library/tree/master/examples/rust/sysvar
+
 use {
     solana_program::{
         instruction::{AccountMeta, Instruction},
-        pubkey::Pubkey,
-        sysvar::{self},
+        sysvar,
     },
     solana_program_test::*,
     solana_sdk::{signature::Signer, transaction::Transaction},
-    solana_lesson_sysvar::processor::process_instruction,
-    std::str::FromStr,
+    solana_lesson_sysvar::process_instruction,
 };
 
 #[tokio::test]
 async fn test_sysvar() {
-    let program_id = Pubkey::from_str("Sysvar1111111111111111111111111111111111111").unwrap();
+    let program_id = sysvar::id();
     let (mut banks_client, payer, recent_blockhash) = ProgramTest::new(
         "solana_lesson_sysvar",
         program_id,
