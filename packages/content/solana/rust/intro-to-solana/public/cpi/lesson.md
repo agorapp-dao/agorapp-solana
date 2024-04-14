@@ -1,3 +1,63 @@
-# Work in progress
+## Program Derived Addresses (PDAs) 
 
-TODO
+Using a PDA, a program may be given the authority over an account and later transfer that authority to another program.
+This is possible because the program can act as the signer in the transaction that gives authority.
+This way, you can create and manage multiple instances of a program on the blockchain.
+
+_Program Address_ is derived from seeds and a program ID (address).
+It has no valid private key associated with it, and thus generating a signature for it is impossible.
+
+To create a PDA, you can use the `find_program_address` function from the `Pubkey` module.
+
+```rust
+// ...
+
+let program_id = Pubkey::from_str("Your_Program_ID_Here").unwrap();
+let seeds = b"Your_Seed_Data_Here";
+
+let (derived_address, bump_seed) = Pubkey::find_program_address(&[seeds], &program_id);
+// ...
+```
+
+Note that this returns a tuple with the derived address and the bump seed.
+Here the bump seed ensures that the derived address is _off-curve_, ie. cannot construct valid private key laying on elliptic curve.
+
+## Cross-program invocation (CPI)
+
+On-chain programs on Solana can interact with each other through cross-program invocation (CPI).
+This allows programs to call other programs on the blockchain.
+
+The **depth of the call stack** is limited to 4.
+The reason of this limitation is to prevent infinite loops and to ensure that the program can be executed in a reasonable amount of time.
+
+Also, **recursion** is possible, but only if it is direct.
+
+### Program signed accounts
+
+Programs can issue instructions that contain signed accounts that were not signed in the original transaction by using _Program derived addresses_.
+
+To sign an account with program derived addresses, a program may invoke_signed().
+
+```rust
+invoke_signed(
+    &instruction,
+    accounts,
+    &[&["First addresses seed"],
+      &["Second addresses first seed", "Second addresses second seed"]],
+)?;
+```
+
+## Exercise
+
+Use CPI to call the [`allocate`](https://docs.rs/solana-program/1.18.11/solana_program/system_instruction/fn.allocate.html) method of the system program.
+
+It is in `solana_program::system_instruction` has the following signature:
+
+```rust
+pub fn allocate(pubkey: &Pubkey, space: u64) -> Instruction
+```
+
+
+Keep in mind that, as always, you must pass the invocation all involved accounts:
+- `system_program_info` account
+- `allocated_info`

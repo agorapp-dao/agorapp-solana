@@ -1,3 +1,7 @@
+//! https://github.com/solana-labs/solana-program-library/blob/master/examples/rust/cross-program-invocation/src/lib.rs
+//!
+//! TEST Rust example demonstrating invoking another program
+
 // Mark this test as BPF-only due to current `ProgramTest` limitations when
 // CPIing into the system program
 
@@ -10,7 +14,7 @@ use {
     },
     solana_program_test::*,
     solana_sdk::{account::Account, signature::Signer, transaction::Transaction},
-    solana_lesson_cpi::processor::{process_instruction, SIZE},
+    solana_lesson_cpi::{process_instruction, SIZE},
     std::str::FromStr,
 };
 

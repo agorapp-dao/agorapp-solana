@@ -25,18 +25,18 @@
       "solution": "transfer-lamports/solution.md"
     },
     {
-      "name": "Sysvar",
-      "slug": "sysvar",
-      "content": "sysvar/lesson.md",
-      "files": ["sysvar/lib.rs"],
-      "solution": "sysvar/solution.md"
-    },
-    {
       "name": "Cross-program invocation",
       "slug": "cpi",
       "content": "cpi/lesson.md",
       "files": ["cpi/lib.rs"],
       "solution": "cpi/solution.md"
+    },
+    {
+      "name": "Sysvar",
+      "slug": "sysvar",
+      "content": "sysvar/lesson.md",
+      "files": ["sysvar/lib.rs"],
+      "solution": "sysvar/solution.md"
     },
     {
       "name": "Transfer tokens",
