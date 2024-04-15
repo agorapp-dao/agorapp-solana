@@ -3,9 +3,9 @@
 
 In Solana, the native currency is **SOL**. 
 However, when interacting with Solana programs, you will often come across the term **lamport**.
-A lamport is the smallest unit of time in Solana, and it is used to measure the cost of computational resources and storage on the Solana blockchain.
+Similar to cents of satoshi, a lamport is the smallest unit of value in Solana, and it is used to measure the cost of computational resources and storage on the Solana blockchain.
 
-One lamport is 0.000_000_001 SOL. One SOL is therefore equivalent to 1_000_000_000 lamports.
+One [lamport](https://solana.com/docs/terminology#lamport) is 0.000_000_001 SOL. One SOL is therefore equivalent to 1_000_000_000 lamports.
 
 When you send a transaction or execute a program on Solana, you pay for the resources used in terms of lamports. 
 The cost of a transaction or program execution is measured in lamports, and the transaction fee is calculated based on the number of lamports consumed.
@@ -35,24 +35,24 @@ In Rust programs, you can access accounts using the `AccountInfo` struct, which 
 You can also check the account's lamport balance, data size, and owner.
 
 ```rust
-    //...
+//...
 
-    // Create an iterator to safely reference accounts in the slice
-    let account_info_iter = &mut accounts.iter();
+// Create an iterator to safely reference accounts in the slice
+let account_info_iter = &mut accounts.iter();
 
-    let account1 = next_account_info(account_info_iter)?;
-    let account2 = next_account_info(account_info_iter)?;
+let account1 = next_account_info(account_info_iter)?;
+let account2 = next_account_info(account_info_iter)?;
 
-    ///...
+///...
 ```
 
 To interact with lamports on an account, you can use the `lamports()` method to get the current balance and `try_borrow_mut_lamports()` to modify the balance.
 
 ```rust
-    // Get the current lamport balance of account1
-    let lamports = account1.lamports();
-    // Modify the lamport balance of account2
-    **account2.try_borrow_mut_lamports()? -= 123;
+// Get the current lamport balance of account1
+let lamports = account1.lamports();
+// Modify the lamport balance of account2
+**account2.try_borrow_mut_lamports()? -= 123;
 ```
 
 To avoid underflow or overflow errors, it is recommended to set your `Cargo.toml` to use overflow checks:
