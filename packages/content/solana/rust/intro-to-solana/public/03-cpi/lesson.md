@@ -1,10 +1,10 @@
-## Program Derived Addresses (PDAs) 
+## Program Derived Addresses (PDAs)
 
 Using a PDA, a program may be given the authority over an account and later transfer that authority to another program.
-This is possible because the program can act as the signer in the transaction that gives authority.
-This way, you can create and manage multiple instances of a program on the blockchain.
 
-_Program Address_ is derived from seeds and a program ID (address).
+For example, PDA can be used by the program to store (limited amount of) data _per user_.
+
+_Program Derived Address_ is derived from seeds and a program ID (address).
 It has no valid private key associated with it, and thus generating a signature for it is impossible.
 
 To create a PDA, you can use the `find_program_address` function from the `Pubkey` module.
@@ -21,6 +21,7 @@ let (derived_address, bump_seed) = Pubkey::find_program_address(&[seeds], &progr
 
 Note that this returns a tuple with the derived address and the bump seed.
 Here the bump seed ensures that the derived address is _off-curve_, i.e. cannot construct valid private key laying on elliptic curve.
+As a result, only the program can reconstruct the address and use it as a storage. 
 
 ## Cross-program invocation (CPI)
 
