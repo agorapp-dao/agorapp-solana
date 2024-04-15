@@ -55,7 +55,7 @@ To interact with lamports on an account, you can use the `lamports()` method to 
     **account2.try_borrow_mut_lamports()? -= 123;
 ```
 
-To avoid underflow or overflow errors, it ios recommended to set your `Cargo.toml` to use overflow checks.
+To avoid underflow or overflow errors, it is recommended to set your `Cargo.toml` to use overflow checks:
 
 ```toml
 [profile.release]

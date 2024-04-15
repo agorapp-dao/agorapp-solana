@@ -1,8 +1,4 @@
-Work in progress
-
 ## What is Solana?
-
-https://careerbooster.teachable.com/courses/1869000/lectures/42811474 :
 
 Solana is a high-performance blockchain designed for scalability and efficiency.
 
@@ -12,7 +8,7 @@ Solana's architecture enables it to handle thousands of transactions per second 
 
 ## Developing contracts for Solana
 
-Development of Solana contracts can be developed using one of these frameworks:
+Solana contracts can be developed using one of these frameworks:
 * **Native** in Rust; it is the best choice when you need to develop a small contract, or you need to have full control over data transfer, storage etc 
 * **Anchor** in Rust; it is less verbose, suitable for multi-program projects, with complex Web UIs 
 * **Seahorse** in Python
@@ -58,7 +54,7 @@ All this is already set up in the environment you are using for this course, so 
 
 ### Program structure
 
-A Solana program is a Rust library that exports a function with the `#[entrypoint]` attribute. 
+Solana program is a Rust library that exports a function with the `#[entrypoint]` attribute. 
 This function is the entry point of the program and is called when the program is invoked.
 
 The further structure of the program is up to you, but you will need to define the program state and data structures, handle instructions, and implement the program logic.
@@ -117,7 +113,7 @@ Now let's look at the types of each of the arguments.
 
 `AccountInfo` is a struct that contains information about an account. It is used to pass account information to the program.
 
-For instruction data, we use a raw byte array `[u8]` to represent the instruction data passed to the program. 
+For instruction data, we use a raw byte array `[u8]` to represent the to represent the program's input data. 
 The program can interpret this data as needed. De/Serialization with Borsh or Serde is a common practice. 
 
 ### Logging
@@ -135,4 +131,4 @@ You will find this useful when debugging and testing your program.
 
 Here comes your first exercise in writing a Solana program.
 
-It will be a simple program that produces text "Hello, Solana" in the logs.
+Modify the program on the right to write a "Hello, Solana" text in the logs.

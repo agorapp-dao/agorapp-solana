@@ -20,7 +20,7 @@ let (derived_address, bump_seed) = Pubkey::find_program_address(&[seeds], &progr
 ```
 
 Note that this returns a tuple with the derived address and the bump seed.
-Here the bump seed ensures that the derived address is _off-curve_, ie. cannot construct valid private key laying on elliptic curve.
+Here the bump seed ensures that the derived address is _off-curve_, i.e. cannot construct valid private key laying on elliptic curve.
 
 ## Cross-program invocation (CPI)
 
@@ -34,7 +34,7 @@ Also, **recursion** is possible, but only if it is direct.
 
 ### Program signed accounts
 
-Programs can issue instructions that contain signed accounts that were not signed in the original transaction by using _Program derived addresses_.
+Programs can issue instructions that contain signed accounts that were not signed in the original transaction by using _Program Derived Addresses_.
 
 To sign an account with program derived addresses, a program may invoke_signed().
 
@@ -51,7 +51,7 @@ invoke_signed(
 
 Use CPI to call the [`allocate`](https://docs.rs/solana-program/1.18.11/solana_program/system_instruction/fn.allocate.html) method of the system program.
 
-It is in `solana_program::system_instruction` has the following signature:
+It is in `solana_program::system_instruction` and has the following signature:
 
 ```rust
 pub fn allocate(pubkey: &Pubkey, space: u64) -> Instruction
