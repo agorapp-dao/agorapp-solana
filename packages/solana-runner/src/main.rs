@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use axum::{
     Json,
-    Router, routing::post,
+    Router, routing::post, routing::get,
 };
 
 use types::{TTestRequest, TTestResponse};
@@ -37,6 +37,8 @@ async fn main() -> anyhow::Result<()> {
     // build our application with a route
     let app = Router::new()
         // `POST /users` goes to `create_user`
+        .route("/v1/status", get(health))
+        .route("/v1/status/", get(health))
         .route("/v1/solve", post(solve))
         .route("/v1/solve/", post(solve))
         ;
@@ -48,6 +50,10 @@ async fn main() -> anyhow::Result<()> {
     tracing::info!("Listening on {}", listener.local_addr().unwrap());
     axum::serve(listener, app).await?;
     Ok(())
+}
+
+async fn health() -> &'static str {
+    "OK"
 }
 
 async fn solve(Json(test_request): Json<TTestRequest>) -> Json<TTestResponse> {
@@ -79,3 +85,4 @@ async fn solve(Json(test_request): Json<TTestRequest>) -> Json<TTestResponse> {
     };
     Json(response)
 }
+
