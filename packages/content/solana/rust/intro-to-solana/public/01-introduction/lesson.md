@@ -113,7 +113,7 @@ Now let's look at the types of each of the arguments.
 
 `AccountInfo` is a struct that contains information about an account. It is used to pass account information to the program.
 
-For instruction data, we use a raw byte array `[u8]` to represent the to represent the program's input data. 
+For instruction data, we use a raw byte array `[u8]` to represent the program's input data. 
 The program can interpret this data as needed. De/Serialization with Borsh or Serde is a common practice. 
 
 ### Logging

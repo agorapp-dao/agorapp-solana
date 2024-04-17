@@ -11,9 +11,10 @@ pnpm install
 # Start dev-editor
 pnpm run dev
 
-# Build docker image for Solana
-cd packages/solana-docker-image
-pnpm run docker-build
+# Start solana-runner
+cd packages/solana-runner
+make docker-build
+make run
 
 # Run docker runner to use the image built in the previous step
 cd packages/docker-runner

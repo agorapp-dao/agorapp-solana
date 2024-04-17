@@ -170,34 +170,6 @@ importers:
         specifier: workspace:^
         version: link:../../../content-common
 
-  packages/docker-runner:
-    dependencies:
-      '@agorapp-dao/runner-common':
-        specifier: '*'
-        version: link:../runner-common
-      dockerode:
-        specifier: ^3.3.5
-        version: 3.3.5
-      express:
-        specifier: ^4.18.2
-        version: 4.19.2
-    devDependencies:
-      '@types/dockerode':
-        specifier: ^3.3.19
-        version: 3.3.28
-      '@types/express':
-        specifier: ^4.17.14
-        version: 4.17.21
-      '@types/node':
-        specifier: ^18.11.0
-        version: 18.14.6
-      mocha:
-        specifier: ^10.1.0
-        version: 10.4.0
-      ts-dedent:
-        specifier: ^2.2.0
-        version: 2.2.0
-
   packages/editor-common:
     dependencies:
       '@agorapp-dao/content-common':
@@ -409,55 +381,6 @@ importers:
       styled-components:
         specifier: ^6.0.7
         version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
-
-  packages/runner-common:
-    dependencies:
-      '@hapi/boom':
-        specifier: ^10.0.0
-        version: 10.0.1
-      chai:
-        specifier: ^4.3.6
-        version: 4.4.1
-      colorette:
-        specifier: ^2.0.20
-        version: 2.0.20
-      express:
-        specifier: ^4.18.2
-        version: 4.19.2
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
-      mocha:
-        specifier: ^10.1.0
-        version: 10.4.0
-      mock-require:
-        specifier: ^3.0.3
-        version: 3.0.3
-      sinon:
-        specifier: ^15.0.1
-        version: 15.2.0
-      ts-dedent:
-        specifier: ^2.2.0
-        version: 2.2.0
-    devDependencies:
-      '@types/chai':
-        specifier: ^4.3.3
-        version: 4.3.14
-      '@types/express':
-        specifier: ^4.17.14
-        version: 4.17.21
-      '@types/lodash':
-        specifier: ^4.14.194
-        version: 4.17.0
-      '@types/mocha':
-        specifier: ^10.0.0
-        version: 10.0.6
-      '@types/mock-require':
-        specifier: ^2.0.1
-        version: 2.0.3
-      '@types/sinon':
-        specifier: ^10.0.13
-        version: 10.0.20
 
 packages:
 
