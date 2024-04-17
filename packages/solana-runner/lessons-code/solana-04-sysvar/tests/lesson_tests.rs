@@ -1,30 +1,34 @@
+//! https://github.com/solana-labs/solana-program-library/tree/master/examples/rust/sysvar
+
 use {
     solana_program::{
         instruction::{AccountMeta, Instruction},
-        pubkey::Pubkey,
+        sysvar,
     },
     solana_program_test::*,
     solana_sdk::{signature::Signer, transaction::Transaction},
-    solana_lesson_introduction::process_instruction,
-    std::str::FromStr,
+    solana_lesson_sysvar::process_instruction,
 };
 
-/// This test does not really look into the log messages; it just checks that the program completes without an error.
 #[tokio::test]
-async fn test_logging() {
-    let program_id = Pubkey::from_str("Logging111111111111111111111111111111111111").unwrap();
+async fn test_sysvar() {
+    let program_id = sysvar::id();
     let (mut banks_client, payer, recent_blockhash) = ProgramTest::new(
-        "solana_lesson_introduction",
+        "solana_lesson_sysvar",
         program_id,
         processor!(process_instruction),
     )
         .start()
         .await;
+
     let mut transaction = Transaction::new_with_payer(
         &[Instruction::new_with_bincode(
             program_id,
-            &[10_u8, 11, 12, 13, 14],
-            vec![AccountMeta::new(Pubkey::new_unique(), false)],
+            &(),
+            vec![
+                AccountMeta::new(sysvar::clock::id(), false),
+                AccountMeta::new(sysvar::rent::id(), false),
+            ],
         )],
         Some(&payer.pubkey()),
     );

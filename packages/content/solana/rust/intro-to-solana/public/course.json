@@ -18,32 +18,25 @@
       "solution": "01-introduction/solution.md"
     },
     {
-      "name": "Sysvar",
-      "slug": "sysvar",
-      "content": "sysvar/lesson.md",
-      "files": ["sysvar/lib.rs"],
-      "solution": "sysvar/solution.md"
-    },
-    {
       "name": "Transfer lamports",
-      "slug": "transfer-lamports",
-      "content": "transfer-lamports/lesson.md",
-      "files": ["transfer-lamports/lib.rs"],
-      "solution": "transfer-lamports/solution.md"
+      "slug": "02-transfer-lamports",
+      "content": "02-transfer-lamports/lesson.md",
+      "files": ["02-transfer-lamports/lib.rs"],
+      "solution": "02-transfer-lamports/solution.md"
     },
     {
       "name": "Cross-program invocation",
-      "slug": "cpi",
-      "content": "cpi/lesson.md",
-      "files": ["cpi/lib.rs"],
-      "solution": "cpi/solution.md"
+      "slug": "03-cpi",
+      "content": "03-cpi/lesson.md",
+      "files": ["03-cpi/lib.rs"],
+      "solution": "03-cpi/solution.md"
     },
     {
-      "name": "Transfer tokens",
-      "slug": "transfer-tokens",
-      "content": "transfer-tokens/lesson.md",
-      "files": ["transfer-tokens/lib.rs"],
-      "solution": "transfer-tokens/solution.md"
+      "name": "Sysvar",
+      "slug": "04-sysvar",
+      "content": "04-sysvar/lesson.md",
+      "files": ["04-sysvar/lib.rs"],
+      "solution": "04-sysvar/solution.md"
     }
   ]
 }
